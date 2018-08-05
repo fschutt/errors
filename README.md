@@ -3,4 +3,4 @@ A bunch of examples of errors I've encountered so far, to remind myself to not d
 
 ## Other annoyances
 
-- In unsafe code, overflow checking is disabled completely. This has led to a very nasty bug, and there is no reason to not panic on overflow, at least in debug mode. Even in C, overflow is UB, so there's no real benefit of silently overflowing, since it's an error to overflow in the first place.
+- Casts happen without any warning so `(2_isize - 3_isize) as usize` has the same effect as "overflowing", although technically not overflowing, since it's perfectly safe.
